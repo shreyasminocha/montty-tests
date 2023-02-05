@@ -1,2 +1,8 @@
 Tests for montty, lab 1 of Rice's COMP 421. Publishing these is permitted under
 the course's honor code policy.
+
+Contributing
+------------
+
+Contributions are welcome. Please run the linter with `make lint` (requires
+clang-format to be installed).

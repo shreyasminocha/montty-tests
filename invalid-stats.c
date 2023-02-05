@@ -4,9 +4,12 @@
 #include <unistd.h>
 
 int main() {
-	InitTerminalDriver();
+	if (InitTerminalDriver() == ERROR)
+		exit(1);
 
-	InitTerminal(1);
+	if (InitTerminal(1) == ERROR)
+		exit(1);
+
 	int status = TerminalDriverStatistics(NULL);
 	assert(status == ERROR);
 

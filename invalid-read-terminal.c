@@ -8,8 +8,11 @@
 void reader(void *);
 
 int main() {
-	InitTerminalDriver();
-	InitTerminal(1);
+	if (InitTerminalDriver() == ERROR)
+		exit(1);
+
+	if (InitTerminal(1) == ERROR)
+		exit(1);
 
 	ThreadCreate(reader, NULL);
 

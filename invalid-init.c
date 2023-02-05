@@ -5,7 +5,8 @@
 #include <unistd.h>
 
 int main() {
-	InitTerminalDriver();
+	if (InitTerminalDriver() == ERROR)
+		exit(1);
 
 	int res = InitTerminal(100);
 	assert(res == ERROR);

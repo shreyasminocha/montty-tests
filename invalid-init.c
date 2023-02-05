@@ -20,5 +20,14 @@ int main() {
 	status = InitTerminal(100);
 	assert(status == ERROR);
 
+	status = InitTerminal(1);
+	assert(status == 0);
+
+	status = InitTerminal(1);
+	assert(status == ERROR);
+
+	status = InitTerminalDriver();
+	assert(status == ERROR);
+
 	exit(0);
 }

@@ -8,10 +8,13 @@
 // Make sure you check the return value of `InitHardware` btw
 
 int main() {
+	int status = InitTerminal(1);
+	assert(status == ERROR);
+
 	if (InitTerminalDriver() == ERROR)
 		exit(1);
 
-	int status = InitTerminal(-1);
+	status = InitTerminal(-1);
 	assert(status == ERROR);
 
 	status = InitTerminal(NUM_TERMINALS); // it's supposed to be exclusive

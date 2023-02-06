@@ -26,16 +26,13 @@ void reader(void *arg) {
 	(void)arg;
 
 	int status;
-	char *buf = malloc(5);
+	char buf[5];
+
 	if (buf == NULL)
 		exit(1);
 
 	status = ReadTerminal(-1, buf, 1);
 	assert(status == ERROR);
-
-	buf = malloc(5);
-	if (buf == NULL)
-		exit(1);
 
 	status = ReadTerminal(100, buf, 1);
 	assert(status == ERROR);
@@ -43,19 +40,9 @@ void reader(void *arg) {
 	status = ReadTerminal(1, NULL, 5);
 	assert(status == ERROR);
 
-	buf = malloc(5);
-	if (buf == NULL)
-		exit(1);
-
 	status = ReadTerminal(1, buf, -10);
 	assert(status == ERROR);
 
-	// buf = malloc(5);
-	// if (buf == NULL)
-	// 	exit(1);
-
 	// status = ReadTerminal(1, buf, 10);
 	// assert(status == ERROR);
-
-	free(buf);
 }

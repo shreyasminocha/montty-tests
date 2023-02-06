@@ -40,6 +40,9 @@ void reader(void *arg) {
 	status = ReadTerminal(1, NULL, 5);
 	assert(status == ERROR);
 
+	status = ReadTerminal(1, NULL, 0);
+	assert(status == 0);
+
 	status = ReadTerminal(1, buf, -10);
 	assert(status == ERROR);
 

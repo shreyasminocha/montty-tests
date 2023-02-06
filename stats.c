@@ -18,12 +18,13 @@ int main() {
 	int status = TerminalDriverStatistics(statistics);
 	assert(status == 0);
 
-	for (int i = 0; i < NUM_TERMINALS; i++) {
+	int i;
+	for (i = 0; i < NUM_TERMINALS; i++) {
 		struct termstat expected = {-1, -1, -1, -1};
 		assert(memcmp(&statistics[i], &expected, sizeof(struct termstat)) == 0);
 	}
 
-	for (int i = 0; i < NUM_TERMINALS; i++) {
+	for (i = 0; i < NUM_TERMINALS; i++) {
 		if (InitTerminal(i) == ERROR)
 			exit(1);
 

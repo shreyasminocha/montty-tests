@@ -35,6 +35,9 @@ void writer(void *arg) {
 	status = WriteTerminal(1, NULL, 5);
 	assert(status == ERROR);
 
+	status = WriteTerminal(1, NULL, 0);
+	assert(status == 0);
+
 	status = WriteTerminal(1, "foo", -10);
 	assert(status == ERROR);
 

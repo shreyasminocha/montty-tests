@@ -1,6 +1,11 @@
 Tests for montty, lab 1 of Rice's COMP 421. Publishing these is permitted under
 the course's honor code policy.
 
+Expected Behaviour
+------------------
+
+No assertion failures or segfaults.
+
 Contributing
 ------------
 
